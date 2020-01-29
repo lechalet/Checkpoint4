@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actor in detail{% endblock %}
+
+{% block body %}
+<div class="card mb-3 w-50">
+      <img class="card-img-top" src="{{ actor.profileImage }}" alt="event_image">
+      <div class="card-body">
+            <h5 class="card-title">{{ actor.name }}</h5>
+            <p class="card-text">{{ actor.story }}</p>
+            <p class="card-text">Originaire de : {{ actor.origin }}</p>
+            <p class="card-text">Fait partie des spectacles : 
+                  {% for event in actor.events %}
+                        {{ event.name }}
+                  {% endfor %}
+            </p>
+      </div>
+</div>
+{% endblock %}

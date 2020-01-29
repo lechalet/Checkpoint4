@@ -8,6 +8,9 @@
       <div class="card-body">
             <h5 class="card-title">Bienvenue à {{ event.name }}</h5>
             <p class="card-text">{{ event.description }}</p>
+            <p class="card-text">Capacité maximum : {{ event.capacity }}</p>
+            <p class="card-text">Lieu de la représentation : {{ event.place }}</p>
+            <p class="card-text">Date de la représentation : {{ event.date|date("d-m-Y") }}</p>
             {% for actor in event.actors %}
             <p class="card-text"><small class="text-muted">Avec la présence de : {{ actor.name }}</small></p>
             {% endfor %}

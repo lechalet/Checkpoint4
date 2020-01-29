@@ -36,12 +36,37 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/evenement/{id}", name="evenement_show", methods={"GET"})
+     * @Route("/evenement/{id}", name="evenement_show_by_id", methods={"GET"})
      */
-    public function show(Event $event): Response
+    public function showByEventId(Event $event): Response
     {
+        
         return $this->render('event/detail.html.twig', [
             'event' => $event,
+        ]);
+    }
+
+    /**
+     * @Route("/artiste", name="actor_list")
+     */
+    public function actors()
+    {
+        $actors = $this->getDoctrine()
+        ->getRepository(Actor::class)
+        ->findAll();
+
+        return $this->render('actor/actor.html.twig', [
+            'actors' => $actors,
+        ]);
+    }
+
+    /**
+     * @Route("/artiste/{id}", name="actor_show_by_id", methods={"GET"})
+     */
+    public function showByActorId(Actor $actor): Response
+    {  
+        return $this->render('actor/detail.html.twig', [
+            'actor' => $actor,
         ]);
     }
 }

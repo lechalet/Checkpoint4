@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+{% for actor in actors | slice(-3, 6)%}
+      <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ actor.profileImage }}" alt="Card image cap">
+            <div class="card-body">
+                  <h5 class="card-title">{{ actor.name }}</h5>
+                  <p class="card-text">{{ actor.story }}{{ actor.origin }}</p>
+                  <a href="{{ path('actor_show_by_id', {id:actor.id}) }}" class="btn btn-primary">Plus de détails</a>
+            </div>
+      </div>
+{% endfor %}
+{% endblock %}

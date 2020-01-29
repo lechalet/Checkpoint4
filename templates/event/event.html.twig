@@ -9,7 +9,7 @@
             <div class="card-body">
                   <h5 class="card-title">{{ event.name }}</h5>
                   <p class="card-text">{{ event.description }}</p>
-                  <a href="{{ path('evenement_show', {id:event.id}) }}" class="btn btn-primary">Plus de détails</a>
+                  <a href="{{ path('evenement_show_by_id', {id:event.id}) }}" class="btn btn-primary">Plus de détails</a>
             </div>
       </div>
 {% endfor %}
