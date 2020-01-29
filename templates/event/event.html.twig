@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+{% for event in events | slice(-3, 6)%}
+      <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ event.eventImage }}" alt="Card image cap">
+            <div class="card-body">
+                  <h5 class="card-title">{{ event.name }}</h5>
+                  <p class="card-text">{{ event.description }}</p>
+                  <a href="{{ path('evenement_show', {id:event.id}) }}" class="btn btn-primary">Plus de détails</a>
+            </div>
+      </div>
+{% endfor %}
+{% endblock %}
