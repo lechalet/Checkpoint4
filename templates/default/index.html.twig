@@ -2,6 +2,75 @@
 
 {% block title %}Accueil{% endblock %}
 
-{# {% block body %}
-      
-{% endblock %} #}
+{% block body %}
+ <main role="main">
+ </br>
+  </br>
+   </br>
+    </br>
+      <div class="container marketing">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://previews.123rf.com/images/alexpokusay/alexpokusay1603/alexpokusay160300086/53428614-jongleur-homme-vintage-r%C3%A9tro-vieux-monocycle-style-illustration-croquis-old-tir%C3%A9-par-la-main-gravure-imi.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Les artistes</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+            <p><a class="btn btn-secondary" href="{{ path('actor_list') }}" role="button">Les artistes &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://stickeramoi.com/8301-large_default/sticker-mural-cirque-clown-jongleur.jpg" width="140" height="140">
+            <h2>Les évenements</h2>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <p><a class="btn btn-secondary" href="{{ path('evenement_list') }}" role="button">Les évenements &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://lh3.googleusercontent.com/proxy/oz_L_dlg505V8vSqPv2xsIRK3cPWfypOrZzVdYzKed0-FAXnriTXyCmi57gG9pB5mz2qg5ekqxAXufh2TBkROFtPq_Tl1crkpBirUNiMWGrIcfEluKe2q9qPwIc" alt="Generic placeholder image" width="140" height="140">
+            <h2>Prendre sa place</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="{{ path('app_login') }}" role="button">Prendre sa place &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Des artistes qui assure le spectacle !</h2>
+            <p class="lead">Pour le plus grand bonheur des jeunes et moins jeunes. Allez découvrir la liste des artiste du cirque des étoiles</p>
+            </br>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="https://cdn.static05.nicematin.com/media/npo/mobile_1440w/2018/08/39691171.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Des animaux qui assure le spectacle</h2>
+            <p class="lead">Pour le plus grand bonheur des jeunes et moins jeunes. Allez découvrir la liste des animaux du cirque des étoiles</p>
+            </br>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="https://img.aws.la-croix.com/2017/01/16/1200817555/cirque-Barnum-avril-2016dune-tournee-Pennsylvanie-Etats-Unis_0_730_486.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Des artistes <span class="text-muted">avec une notoriété national !</span></h2>
+            </br>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="https://www.artesine.fr/images/guide/produits/2018-11/photo-collage-delire-080952.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+        <hr class="featurette-divider">
+      </div>
+{% endblock %}

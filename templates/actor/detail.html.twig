@@ -3,17 +3,51 @@
 {% block title %}Actor in detail{% endblock %}
 
 {% block body %}
-<div class="card mb-3 w-50">
-      <img class="card-img-top" src="{{ actor.profileImage }}" alt="event_image">
-      <div class="card-body">
-            <h5 class="card-title">{{ actor.name }}</h5>
-            <p class="card-text">{{ actor.story }}</p>
-            <p class="card-text">Originaire de : {{ actor.origin }}</p>
-            <p class="card-text">Fait partie des spectacles : 
-                  {% for event in actor.events %}
-                        {{ event.name }}
-                  {% endfor %}
+<div class="container">
+</br>
+</br>
+</br>
+</br>
+</br>
+    <div class="span3 well">
+        <center>
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="{{ actor.profileImage }}" name="aboutme" width="140" height="140" class="img-circle"></a>
+        <h2>{{ actor.name }}</h2>
+        <em>Clique sur l'image pour en découvrir plus</em>
+		</center>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">Plus d'info sur {{ actor.name }}</h4>
+                    </div>
+                <div class="modal-body">
+                    <center>
+                        <img src="{{ actor.profileImage }}"></a>
+                        <h3 class="media-heading">{{ actor.name }}<small>{{ actor.origin }}</small></h3>
+                    </center>
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Biographie: </strong><br>
+                        {{ actor.story }}</p>
+                    <br>
+                    <p>Fait partie des spectacles : 
+                        {% for event in actor.events %}
+                              {{ event.name }}
+                        {% endfor %}
             </p>
-      </div>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <a src="actor_list" type="button" class="btn btn-default" data-dismiss="modal">Retour à l'artistes</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
