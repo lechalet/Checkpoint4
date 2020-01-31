@@ -34,11 +34,6 @@ class Event
     private $place;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Ticket", mappedBy="event")
-     */
-    private $tickets;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Actor", inversedBy="events")
      */
         private $actors;
@@ -60,7 +55,6 @@ class Event
 
     public function __construct()
     {
-        $this->tickets = new ArrayCollection();
         $this->actors = new ArrayCollection();
     }
 
@@ -101,37 +95,6 @@ class Event
     public function setPlace(string $place): self
     {
         $this->place = $place;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Ticket[]
-     */
-    public function getTickets(): Collection
-    {
-        return $this->tickets;
-    }
-
-    public function addTicket(Ticket $ticket): self
-    {
-        if (!$this->tickets->contains($ticket)) {
-            $this->tickets[] = $ticket;
-            $ticket->setEvent($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTicket(Ticket $ticket): self
-    {
-        if ($this->tickets->contains($ticket)) {
-            $this->tickets->removeElement($ticket);
-            // set the owning side to null (unless already changed)
-            if ($ticket->getEvent() === $this) {
-                $ticket->setEvent(null);
-            }
-        }
 
         return $this;
     }
